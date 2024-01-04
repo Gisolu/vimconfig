@@ -1,0 +1,5 @@
+vim.keymap.set("n", "<S-t>", ":ObsidianTemplate<CR>", {})
+vim.keymap.set("n", "<leader>obl", ":ObsidianBacklinks<CR>", {})
+vim.keymap.set("n", "<leader>so", ":ObsidianSearch<CR>", {})
+vim.keymap.set("v", "<C-t>", ":ObsidianLink<CR>", {})
+vim.keymap.set("v", "<C-t><C-n>", ":ObsidianLinkNew<CR>", {})
