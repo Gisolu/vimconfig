@@ -24,6 +24,7 @@ vim.keymap.set("n", "<M-z>", ":set wrap!<cr>", {}) -- toggle word wrap -- I hate
 -- Plugin manager
 vim.keymap.set("n", "<leader>ps", ":Lazy home<cr>", {}) -- plugin list
 vim.keymap.set("n", "<leader>pu", ":Lazy sync<cr>", {}) -- plugin install, clean and update
+vim.keymap.set("n", "<leader>ms", ":Mason<cr>", {}) -- plugin install, clean and update
 
 -- Movement
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv") -- move code blocks in visual mode

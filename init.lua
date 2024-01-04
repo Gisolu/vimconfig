@@ -54,6 +54,8 @@ require("lazy").setup({
 require("mendy.config")
 require("mendy.keybindings")
 
-vim.cmd("colorscheme rose-pine")
+-- This setting is only for the zenbones theme. Comment it when changing the theme.
+vim.g.zenbones_transparent_background = true
+vim.cmd("colorscheme zenbones")
 
 -- vim: ts=2 sts=2 sw=2 et

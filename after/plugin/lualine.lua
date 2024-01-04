@@ -39,4 +39,4 @@ require('lualine').setup {
   extensions = {}
 }
 
-require("lualine").setup({ theme = "dracula" })
+require("lualine").setup({ theme = "horizon" })
