@@ -1,7 +1,7 @@
-vim.keymap.set('n', '<space>de', vim.diagnostic.open_float)
+vim.keymap.set('n', '<leader>de', vim.diagnostic.open_float)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
-vim.keymap.set('n', '<space>dq', vim.diagnostic.setloclist)
+vim.keymap.set('n', '<leader>dq', vim.diagnostic.setloclist)
 
 --  This function gets run when an LSP connects to a particular buffer.
 local on_attach = function(_, bufnr)

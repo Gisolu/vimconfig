@@ -10,7 +10,7 @@ vim.keymap.set("n", "<leader>sq", telescope.quickfix, {})
 vim.keymap.set("n", "<leader>sr", telescope.registers, {})
 vim.keymap.set("n", "<leader>sd", telescope.diagnostics, {})
 vim.keymap.set("n", "<leader>sp", telescope.planets, {}) -- Some telescope humor
-vim.keymap.set("n", "<leader>s?", telescope.oldfiles, {}) 
+vim.keymap.set("n", "<leader>s?", telescope.oldfiles, {})
 vim.keymap.set("n", "<leader>gsb", telescope.git_branches, {})
 vim.keymap.set("n", "<leader>gsc", telescope.git_commits, {})
 
@@ -38,7 +38,6 @@ vim.api.nvim_set_keymap(
 local harpoon = require("harpoon")
 harpoon.setup({})
 vim.keymap.set("n", "<leader>m", function() harpoon:list():append() end)
-vim.keymap.set("n", "<M-h>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
 
 vim.keymap.set("n", "<M-1>", function() harpoon:list():select(1) end)
 vim.keymap.set("n", "<M-2>", function() harpoon:list():select(2) end)
@@ -66,5 +65,5 @@ local function toggle_telescope(harpoon_files)
     }):find()
 end
 
-vim.keymap.set("n", "<C-S-H>", function() toggle_telescope(harpoon:list()) end,
+vim.keymap.set("n", "<M-h>", function() toggle_telescope(harpoon:list()) end,
     { desc = "Open harpoon window" })
