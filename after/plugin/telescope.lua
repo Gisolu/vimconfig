@@ -70,7 +70,7 @@ local function telescope_live_grep_open_files()
     }
 end
 vim.keymap.set('n', '<leader>sgo', telescope_live_grep_open_files, { desc = '[S]earch [/] in Open Files' })
-vim.keymap.set('n', '<leader>ss', require('telescope.builtin').builtin, { desc = '[S]earch [S]elect Telescope' })
+vim.keymap.set('n', '<leader>sbu', require('telescope.builtin').builtin, { desc = '[S]earch [S]elect Telescope' })
 vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
 vim.keymap.set('n', '<leader>sgr', ':LiveGrepGitRoot<cr>', { desc = '[S]earch by [G]rep on Git Root' })
 vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[S]earch [R]esume' })
@@ -94,8 +94,14 @@ vim.api.nvim_set_keymap(
 
 -- Harpoon integration
 local harpoon = require("harpoon")
-harpoon.setup({})
+harpoon:setup({
+    settings = {
+        save_on_toggle = true,
+        sync_on_ui_close = true,
+    }
+})
 vim.keymap.set("n", "<leader>m", function() harpoon:list():append() end)
+vim.keymap.set("n", "<M-m>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
 
 vim.keymap.set("n", "<M-1>", function() harpoon:list():select(1) end)
 vim.keymap.set("n", "<M-2>", function() harpoon:list():select(2) end)

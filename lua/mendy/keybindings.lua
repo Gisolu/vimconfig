@@ -43,7 +43,8 @@ vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
 -- 2. Faster mode switch from insert to normal
-vim.keymap.set("i", "jj", "<Esc>", {})
+-- use setxkbmap caps:escape from the bash or zsh rc file to swap to capslock based escape
+vim.keymap.set("i", "jj", "<Esc>:update<CR>", {})
 -- 3. Format document force
 vim.keymap.set("n", "<leader>lf", function () vim.lsp.buf.format() end, {})
 
@@ -54,3 +55,7 @@ vim.keymap.set("n", "<leader>Lc", ":e ~/.config/nvim<cr>")
 vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
+
+-- Zen mode and twilight
+vim.keymap.set("n", "<M-z>", ":ZenMode<cr>")
+vim.keymap.set("n", "<M-z>", ":Twilight<cr>")

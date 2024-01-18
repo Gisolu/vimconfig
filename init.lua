@@ -45,7 +45,6 @@ require("lazy").setup({
     'kkoomen/vim-doge',
     build = ':call doge#install()'
   },
-
   -- Other plugins to be imported
   { import = "mendy.plugins" },
   { import = "mendy.themes" }
@@ -56,6 +55,6 @@ require("mendy.keybindings")
 
 -- This setting is only for the zenbones theme. Comment it when changing the theme.
 vim.g.zenbones_transparent_background = true
-vim.cmd("colorscheme zenbones")
+vim.cmd("colorscheme rose-pine")
 
 -- vim: ts=2 sts=2 sw=2 et
