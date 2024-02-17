@@ -9,10 +9,11 @@ vim.keymap.set("n", "<leader>sl", telescope.loclist, {})
 vim.keymap.set("n", "<leader>sq", telescope.quickfix, {})
 vim.keymap.set("n", "<leader>sr", telescope.registers, {})
 vim.keymap.set("n", "<leader>sd", telescope.diagnostics, {})
-vim.keymap.set("n", "<leader>sp", telescope.planets, {}) -- Some telescope humor
-vim.keymap.set("n", "<leader>s?", telescope.oldfiles, {})
+vim.keymap.set("n", "<leader>sp", telescope.lsp_document_symbols, {})
 vim.keymap.set("n", "<leader>gsb", telescope.git_branches, {})
 vim.keymap.set("n", "<leader>gsc", telescope.git_commits, {})
+vim.keymap.set("n", "<leader>st", telescope.treesitter, {})
+vim.keymap.set("n", "<leader>sk", telescope.keymaps, {})
 
 -- Enable telescope fzf native, if installed
 pcall(require('telescope').load_extension, 'fzf')
@@ -80,14 +81,14 @@ require("telescope").load_extension "file_browser"
 -- 1. Open folder root
 vim.api.nvim_set_keymap(
     "n",
-    "<space>br",
+    "<M-r>",
     ":Telescope file_browser<CR>",
     { noremap = true }
 )
 -- 2. Open folder at current file
 vim.api.nvim_set_keymap(
     "n",
-    "<space>b",
+    "<M-b>",
     ":Telescope file_browser path=%:p:h select_buffer=true<CR>",
     { noremap = true }
 )
@@ -102,6 +103,8 @@ harpoon:setup({
 })
 vim.keymap.set("n", "<leader>m", function() harpoon:list():append() end)
 vim.keymap.set("n", "<M-m>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+vim.keymap.set("n", "<M-h>", function() toggle_telescope(harpoon:list()) end,
+    { desc = "Open harpoon window in telescope" })
 
 vim.keymap.set("n", "<M-1>", function() harpoon:list():select(1) end)
 vim.keymap.set("n", "<M-2>", function() harpoon:list():select(2) end)
@@ -128,6 +131,3 @@ local function toggle_telescope(harpoon_files)
         sorter = conf.generic_sorter({}),
     }):find()
 end
-
-vim.keymap.set("n", "<M-h>", function() toggle_telescope(harpoon:list()) end,
-    { desc = "Open harpoon window" })

@@ -20,5 +20,8 @@ return {
             "if_statement",
         },
         exclude = {}, -- exclude these filetypes
-    }
+    },
+    config = function()
+        vim.keymap.set("n", "<leader>twi", ":Twilight<CR>", { noremap = true, silent = true })
+    end
 }

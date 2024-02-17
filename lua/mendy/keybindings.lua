@@ -3,7 +3,9 @@ vim.keymap.set("n", "<leader>w", ":w!<cr>", {})
 vim.keymap.set("n", "<leader>q", ":q!<cr>", {})
 
 -- Netrw
-vim.keymap.set("n", "-", ":Ex<cr>")
+-- vim.keymap.set("n", "-", ":Ex<cr>")
+-- Oil
+vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
 -- Windows
 -- 1. Window Navigation
@@ -24,7 +26,7 @@ vim.keymap.set("n", "<M-z>", ":set wrap!<cr>", {}) -- toggle word wrap -- I hate
 -- Plugin manager
 vim.keymap.set("n", "<leader>ps", ":Lazy home<cr>", {}) -- plugin list
 vim.keymap.set("n", "<leader>pu", ":Lazy sync<cr>", {}) -- plugin install, clean and update
-vim.keymap.set("n", "<leader>ms", ":Mason<cr>", {}) -- plugin install, clean and update
+vim.keymap.set("n", "<leader>ms", ":Mason<cr>", {})     -- plugin install, clean and update
 
 -- Movement
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv") -- move code blocks in visual mode
@@ -39,14 +41,14 @@ vim.keymap.set("n", "N", "Nzzzv")
 -- Editing
 -- 1. Cut, copy and paste without saving to registers, and map gui register
 vim.keymap.set("x", "<leader>p", [["_dP]])
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
-vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 -- 2. Faster mode switch from insert to normal
 -- use setxkbmap caps:escape from the bash or zsh rc file to swap to capslock based escape
-vim.keymap.set("i", "jj", "<Esc>:update<CR>", {})
+vim.keymap.set("i", "jj", "<Esc>:update<CR>", { noremap = true })
 -- 3. Format document force
-vim.keymap.set("n", "<leader>lf", function () vim.lsp.buf.format() end, {})
+vim.keymap.set("n", "<leader>lf", function() vim.lsp.buf.format() end, {})
 
 -- Config
 -- 1. Edit

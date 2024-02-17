@@ -5,7 +5,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Package manager of choice is lazy.nvim
--- Yoinked from
+-- Yoinked from lazy.nvim's README
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -37,9 +37,6 @@ require("lazy").setup({
   -- Rainbow highlighting
   "HiPhish/rainbow-delimiters.nvim",
 
-  -- Highlight unique character for each word in line to jump to
-  'unblevable/quick-scope',
-
   -- Code documentation snippet generator
   {
     'kkoomen/vim-doge',
@@ -54,7 +51,9 @@ require("mendy.config")
 require("mendy.keybindings")
 
 -- This setting is only for the zenbones theme. Comment it when changing the theme.
-vim.g.zenbones_transparent_background = true
-vim.cmd("colorscheme rose-pine")
+-- vim.g.zenbones_transparent_background = true
+vim.cmd("colorscheme tokyonight")
+
+-- Config for quickscope
 
 -- vim: ts=2 sts=2 sw=2 et
