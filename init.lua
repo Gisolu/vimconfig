@@ -52,7 +52,7 @@ require("mendy.keybindings")
 
 -- This setting is only for the zenbones theme. Comment it when changing the theme.
 -- vim.g.zenbones_transparent_background = true
-vim.cmd("colorscheme tokyonight")
+vim.cmd("colorscheme cyberdream")
 
 -- Config for quickscope
 

@@ -1,6 +1,6 @@
 # Mendy's Neovim Configuration
 
-Welcome to my Neovim configuration! This setup is designed to enhance my coding workflow, and I'm happy to share it with the community. Feel free to use it, modify it, or suggest improvements.
+Welcome to my Neovim configuration! This setup is designed to enhance my coding workflow, and I'm happy to share it with the community. Feel free to use it, modify it, or suggest improvements. This configuration was heavily inspired by kickstart.nvim, and some parts of the config is directly yoinked from kickstart.nvim. Go check that project out, it's an amazing place to start your neovim journey.
 
 ## Features
 
